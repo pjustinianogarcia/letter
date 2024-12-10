@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<section id="header">
+    <a href="index.html"><img src="./img/letterlogo.png" class="logo" alt="logo"></a>
+    <div>
+        <ul id="navbar">
+            <li><a href="index.html">Home</a></li>   
+            <li id="lg-bag"><a class="active" href="cart.html"><i class="fa-duotone fa-solid fa-bag-shopping"></i></a></li>
+            <a href="#" id="close"><i class="fa-regular fa-x"></i></a>
+        </ul>
+    </div>
+    <div id="mobile">
+        <a href="cart.html"><i class="fa-duotone fa-solid fa-bag-shopping"></i></a>
+        
+    </div>
+</section>
+
+<section id="cart" class="section-p1">
+    <table width="100%">
+        <thead>
+            <tr>
+                <td>Remove</td>
+                <td>Image</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Quantity</td> 
+                <td>Subtotal</td>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+          
+        </tbody>
+    </table>
+</section>
+
+<section id="cart-add" class="section-p1">
+    <div id="coupon">
+        <h3>Apply Coupon</h3>
+    <div>
+    <input id="coupon-input" type="text" placeholder="Enter Your Coupon">
+    <button id="apply-coupon" class="normal">Apply</button>
+</div>
+</div>
+<div id="subtotal">
+    <h3>Cart Totals</h3>
+    <table>
+        <tr>
+            <td>Cart Subtotal</td>
+            <td id="cart-subtotal">$</td>
+        </tr>
+        <tr>
+            <td>Shipping</td>
+            <td id="shipping-cost">$ 1.00</td>
+        </tr>
+        <tr>
+            <td><strong>Total</strong></td>
+            <td id="cart-total"><strong>$</strong></td>
+        </tr>
+    </table>
+    <button class="normal" id="checkout-btn">Proceed to checkout</button>
+</div>
+</section>
+
+
+
+
+
+
+
+<script src="script.js"></script>
+<script src="https://kit.fontawesome.com/7681af689a.js" crossorigin="anonymous"></script>
