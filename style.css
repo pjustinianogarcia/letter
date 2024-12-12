@@ -118,7 +118,6 @@ body {
 
 #hero button {
     background-image: url(./img/stamp.png);
-    
     background-color: transparent;
     color: #fff;
     border: 0;
@@ -438,6 +437,71 @@ body {
     padding: 10px;
     font-size: 13px;
 }
+
+/*newsletter*/
+#newsletter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #088178;
+}
+
+#newsletter h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+}
+
+#newsletter p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+#newsletter input {
+    height: 3.125rem;
+    padding: 0 1.25rem;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form {
+    display: flex;
+    width: 40%;
+}
+
+#newsletter button {
+    background-color: #B01D2E;
+    color: #fff;
+    white-space: nowrap;
+    width: fit-content;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#newsletter button:hover {
+    background-color: #af4b56;
+}
+@media (max-width: 477px){
+    #newsletter .form{
+width: 100%;
+    }
+    #newsletter{
+        padding: 40PX 20PX;
+    }
+}
+
 
 @media (max-width: 852px) {
     #hero button {

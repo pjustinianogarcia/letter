@@ -1,3 +1,4 @@
+//navbar
 const bar = document.getElementById('bar')
 const close = document.getElementById('close');
 const nav = document.getElementById('navbar');
@@ -14,11 +15,11 @@ if (close) {
     })
 }
 
-// emial
+// email
 
 function sendMail() {
     let params = {
-        name: document.getElementById("email").value,
+        to_email: document.getElementById("email").value,
     }
     const serviceID = "service_kr1afjy";
     const templateID = "template_wo8yez9";
@@ -28,14 +29,13 @@ function sendMail() {
     .then((res) => {
             document.getElementById("email").value = "";
             console.log(res);
-            alert("your code has been sent");
+            alert("your email has been sent");
         })
     .catch((err) => console.log(err)); 
 }
 
 
 //add to cart
-
 
 // Initialize the cart
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -47,7 +47,7 @@ function saveCart() {
 
 // Function to add item to the cart
 function addToCart(event) {
-    event.preventDefault(); // Prevent the default link behavior
+    event.preventDefault(); 
 
     const button = event.target.closest(".add-to-cart");
     if (!button) return;
@@ -62,9 +62,9 @@ function addToCart(event) {
     // Check if the product is already in the cart
     const existingProduct = cart.find(item => item.id === product.id);
     if (existingProduct) {
-        existingProduct.quantity += 1; // Increment quantity
+        existingProduct.quantity += 1; 
     } else {
-        cart.push(product); // Add new product
+        cart.push(product); 
     }
 
     saveCart();
@@ -78,7 +78,7 @@ document.querySelectorAll(".add-to-cart").forEach(button => {
 
 
 // cart
-
+1
 
 // Function to calculate and display the cart totals
 function displayCartTotals() {
@@ -90,11 +90,11 @@ function displayCartTotals() {
         subtotal += item.price * item.quantity;
     });
 
-    const shipping = 1.00; // Flat shipping cost
+    const shipping = 1.00; 
     const total = subtotal + shipping;
 
-    cartSubtotalElem.innerText = `$${subtotal.toFixed(2)}`;
-    cartTotalElem.innerHTML = `<strong>$${total.toFixed(2)}</strong>`;
+        cartSubtotalElem.innerText = `$${subtotal.toFixed(2)}`;
+        cartTotalElem.innerHTML = `<strong>$${total.toFixed(2)}</strong>`;
 }
 
 // Load the cart from localStorage and display totals
@@ -106,7 +106,7 @@ function loadCart() {
 document.addEventListener("DOMContentLoaded", loadCart);
 
 function renderCartItems() {
-    const cartItemsContainer = document.getElementById("cart-items"); // Add this container in your HTML
+    const cartItemsContainer = document.getElementById("cart-items"); 
     cartItemsContainer.innerHTML = "";
 
     cart.forEach(item => {
@@ -124,7 +124,7 @@ function renderCartItems() {
 // Function to display cart items
 function displayCartItems() {
     const cartItemsElem = document.getElementById("cart-items");
-    cartItemsElem.innerHTML = ""; // Clear the table body
+    cartItemsElem.innerHTML = ""; 
 
     // Check if the cart has items
     if (cart.length === 0) {
@@ -158,25 +158,24 @@ function displayCartItems() {
 
 // Remove item from cart
 function removeFromCart(index) {
-    cart.splice(index, 1); // Remove the item from the cart
-    localStorage.setItem("cart", JSON.stringify(cart)); // Update localStorage
-    displayCartItems(); // Refresh the cart display
-    displayCartTotals(); // Update totals
+    cart.splice(index, 1); 
+    localStorage.setItem("cart", JSON.stringify(cart)); 
+    displayCartItems(); 
+    displayCartTotals(); 
 }
 
 // Update item quantity in the cart
 function updateCartQuantity(index, newQuantity) {
-    if (newQuantity <= 0) return; // Prevent invalid quantities
-    cart[index].quantity = parseInt(newQuantity); // Update quantity
-    localStorage.setItem("cart", JSON.stringify(cart)); // Update localStorage
-    displayCartItems(); // Refresh the cart display
-    displayCartTotals(); // Update totals
+    if (newQuantity <= 0) return; 
+    cart[index].quantity = parseInt(newQuantity); 
+    localStorage.setItem("cart", JSON.stringify(cart)); 
+    displayCartItems(); 
+    displayCartTotals(); 
 }
 
 // Call the function on page load
 document.addEventListener("DOMContentLoaded", () => {
-    loadCart(); // Load the cart from localStorage
-    displayCartItems(); // Display the cart items
+    displayCartItems(); 
 });
 
 
@@ -185,11 +184,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const applyCouponBtn = document.getElementById("apply-coupon");
     const cartSubtotalElem = document.getElementById("cart-subtotal");
     const cartTotalElem = document.getElementById("cart-total");
-    const shippingCostElem = document.getElementById("shipping-cost");
+    
 
-    let subtotal = 0; // The subtotal will be updated dynamically
-    const shippingCost = 1.0; // Flat shipping cost
-    let discount = 0; // Default no discount
+    let subtotal = 0; 
+    const shippingCost = 1.0; 
+    let discount = 0; 
 
     // Function to calculate and display totals
     function calculateTotals() {
