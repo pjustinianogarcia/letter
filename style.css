@@ -415,6 +415,14 @@ body {
     padding: 12px 20px;
 }
 
+#apply-coupon:hover {
+    background-color: #0cada2; 
+}
+
+#checkout-btn {
+    background-color: #0cada2; 
+}
+
 
 
 
@@ -438,7 +446,7 @@ body {
     font-size: 13px;
 }
 
-/*newsletter*/
+/*newsletter
 #newsletter {
     display: flex;
     justify-content: space-between;
@@ -508,7 +516,7 @@ width: 100%;
         margin-top: 120px;
     }
 }
- 
+ */
 
 @media (max-width: 799px) {
 

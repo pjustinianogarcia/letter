@@ -205,18 +205,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const couponCode = couponInput.value.trim();
 
         if (couponCode === "DISCOUNT10") {
-            discount = subtotal * 0.10; // 10% discount
+            discount = subtotal * 0.10; 
             alert("Coupon applied! You saved 10%.");
         } else {
-            discount = 0; // Reset discount if invalid
+            discount = 0; 
             alert("Invalid coupon code.");
         }
 
-        calculateTotals(); // Update totals after applying the coupon
+        calculateTotals(); 
     });
 
     // Load cart and subtotal
     loadCart();
     subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
-    calculateTotals(); // Initial calculation
+    calculateTotals(); 
 });
