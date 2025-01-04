@@ -200,20 +200,24 @@ document.addEventListener("DOMContentLoaded", () => {
         cartTotalElem.innerHTML = `<strong>$${total.toFixed(2)}</strong>`;
     }
 
-    // Apply coupon logic
-    applyCouponBtn.addEventListener("click", () => {
-        const couponCode = couponInput.value.trim();
+  // Apply coupon logic
+applyCouponBtn.addEventListener("click", () => {
+    const couponCode = couponInput.value.trim().toUpperCase(); 
 
-        if (couponCode === "DISCOUNT10") {
-            discount = subtotal * 0.10; 
-            alert("Coupon applied! You saved 10%.");
-        } else {
-            discount = 0; 
-            alert("Invalid coupon code.");
-        }
+    if (couponCode === "DISCOUNT10") {
+        discount = subtotal * 0.10; 
+        alert("Coupon applied! You saved 10%.");
+    } else if (couponCode === "20OFF") {
+        discount = subtotal * 0.20; 
+        alert("Coupon applied! You saved 20%.");
+    } else {
+        discount = 0; 
+        alert("Invalid coupon code.");
+    }
 
-        calculateTotals(); 
-    });
+    calculateTotals(); 
+});
+
 
     // Load cart and subtotal
     loadCart();
